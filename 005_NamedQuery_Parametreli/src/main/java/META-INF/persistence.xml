@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence 
+ 	http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="PU_AyarDosyasi_005"
+		transaction-type="RESOURCE_LOCAL">
+
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>com.husrev.model.Ogrenci</class>
+		<class>com.husrev.model.Personel</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/deneme" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="1234" />
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+
+			<property name="javax.persistence.schema-generation-action" value="create" />
+			<property name="javax.persistence.schema-generation-target" value="database" />
+
+
+			<!-- <property name="hibernate.show_sql" value="true"/> -->
+			<!-- <property name="hibernate.format_sql" value="true"/> -->
+
+
+			<property name="javax.persistence.schema-generation.database.action" 
+				value="drop-and-create"/> 
+			<!-- 	burada bu satiri ekledigimizde table drop edilip 
+				arkasında bastan create ediliyor. -->
+			
+			<!-- <property name="hbm2ddl.auto" value="update"/> burada ise var olan 
+				tabloyu bulur ve tabloyu guncellestirir. -->
+
+			<!-- <property name="hibernate.archive.autodetection" value="class"/> -->
+			<!-- <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" 
+				/> -->
+			<!-- <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect"/> -->
+
+		</properties>
+	</persistence-unit>
+</persistence>
